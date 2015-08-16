@@ -1,17 +1,6 @@
-/*----------------------------------------------------
-> File Name:    4.cpp
-> Author:       Shenghui Zhou
-> Mail:         shzhouus@gmail.com 
-> Created Time: Wed 12 Aug 2015 09:31:54 AM CDT
-----------------------------------------------------*/
-
 #include <iostream>
-#include <vector>
 #include <algorithm>
 #include <string>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
 
 using namespace std;
 
@@ -34,4 +23,10 @@ void replaceSpace (string &str) {
 			--i;
 		}
 	}
+}
+
+int main() {
+	string str = " sheng  hui zhou           ";
+	replaceSpace(str);
+	cout << str << endl;
 }

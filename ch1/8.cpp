@@ -1,18 +1,6 @@
-/*----------------------------------------------------
-> File Name:    8.cpp
-> Author:       Shenghui Zhou
-> Mail:         shzhouus@gmail.com 
-> Created Time: Fri 17 Apr 2015 11:52:10 AM CDT
-----------------------------------------------------*/
-
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <string>
 #include <cstring>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
 
 using namespace std;
 
