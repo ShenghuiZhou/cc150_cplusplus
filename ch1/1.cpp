@@ -1,3 +1,8 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 bool isUniqueChars(const string &str) {
 	int check = 0;
 	for(auto c:str) {
@@ -6,5 +11,10 @@ bool isUniqueChars(const string &str) {
 		check |= 0x1<<tmp;
 	}
 	return true;
+}
+
+int main() {
+	string test = "hello";
+	cout << std::boolalpha << isUniqueChars(test) << endl;
 }
 
