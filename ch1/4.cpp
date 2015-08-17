@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void replaceSpace (string &str) {
+void solution_4(string &str) {
 	auto str_rend = find_if(str.rbegin(),str.rend(),[](char c){
 				return c!=' ';
 			});
@@ -27,6 +27,6 @@ void replaceSpace (string &str) {
 
 int main() {
 	string str = " sheng  hui zhou           ";
-	replaceSpace(str);
+	solution_4(str);
 	cout << str << endl;
 }

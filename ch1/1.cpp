@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool isUniqueChars(const string &str) {
+bool solution_1(const string &str) {
 	int check = 0;
 	for(auto c:str) {
 		int tmp = tolower(c) - 'a';
@@ -15,6 +15,6 @@ bool isUniqueChars(const string &str) {
 
 int main() {
 	string test = "hello";
-	cout << std::boolalpha << isUniqueChars(test) << endl;
+	cout << std::boolalpha << solution_1(test) << endl;
 }
 
