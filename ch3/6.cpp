@@ -1,17 +1,44 @@
-/*----------------------------------------------------
-> File Name:    6.cpp
-> Author:       Shenghui Zhou
-> Mail:         shzhouus@gmail.com 
-> Created Time: Wed 19 Aug 2015 05:33:52 PM CDT
-----------------------------------------------------*/
-
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <string>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
-
+#include <stack>
 using namespace std;
 
+class AscendingStack {
+	private:
+		stack<int> data;
+	public:
+		void push(int x) {
+			stack<int> cache;
+			while(!data.empty() && data.top()>x) {
+				cache.push(data.top());
+				data.pop();
+			}
+			data.push(x);
+			while(!cache.empty()) {
+				data.push(cache.top());
+				cache.pop();
+			}
+		}
+
+		void pop() {
+			data.pop();
+		}
+
+		bool empty() const {
+			return data.empty();
+		}
+
+		int top() const {
+			return data.top();
+		}
+};
+
+int main() {
+	vector<int> test = {2,4,3,1,5,7,2,0,10,-2};
+	AscendingStack stk;
+	for(auto i:test) stk.push(i);
+	while(!stk.empty()) {
+		cout << stk.top() << endl;
+		stk.pop();
+	}
+}
