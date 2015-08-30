@@ -33,7 +33,7 @@ class KeyHasher {
 		}
 };
 
-vector<int> DFS(int b, int e, unordered_map<Key,vector<int>,KeyHasher> &f, const string &str) {
+vector<int> solution(int b, int e, unordered_map<Key,vector<int>,KeyHasher> &f, const string &str) {
 	if(b==e-1) {
 		if(str[b]=='0') return {1,0};
 		else return {0,1};
