@@ -7,10 +7,8 @@ vector<int> solution(int b, int e, vector<vector<vector<int>>> &f, const string 
 		if(str[b]=='0') return {1,0};
 		else return {0,1};
 	}
-	
-	if(f[b][e][0]!=-1 && f[b][e][1] !=-1) return f[b][e];
-	
 	vector<int> &cur = f[b][e];
+	if(cur[0]!=-1 && cur[1]!=-1) return cur;
 	cur[0] = cur[1] = 0;
 	for(int i=b; i!=e; ++i) {
 		char c = str[i];
