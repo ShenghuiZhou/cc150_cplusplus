@@ -44,8 +44,8 @@ vector<int> solution(int b, int e, unordered_map<Key,vector<int>,KeyHasher> &f, 
 	for(int i=b; i!=e; ++i) {
 		char c = str[i];
 		if(c!='1' && c!='0') {
-			auto left = DFS(b,i,f,str);
-			auto right = DFS(i+1,e,f,str);
+			auto left = solution(b,i,f,str);
+			auto right = solution(i+1,e,f,str);
 
 			if(c=='*') {
 				f[cur_key][0] += left[0]*right[0] + left[0]*right[1] + left[1]*right[0];
@@ -69,7 +69,7 @@ vector<int> solution(int b, int e, unordered_map<Key,vector<int>,KeyHasher> &f, 
 vector<int> solution(const string &str) {
 	if(str.empty()) return {0,0};
 	unordered_map<Key,vector<int>,KeyHasher> f;
-	return DFS(0,str.size(),f,str);
+	return solution(0,str.size(),f,str);
 }
 
 int main() {
